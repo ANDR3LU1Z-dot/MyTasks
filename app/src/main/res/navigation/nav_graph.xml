@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.mytasks.view.LoginFragment"
+        android:label="My Tasks"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_tasksFragment"
+            app:destination="@id/tasksFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_signUpFragment"
+            app:destination="@id/signUpFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/tasksFragment"
+        android:name="com.example.mytasks.view.TasksFragment"
+        android:label="My Tasks"
+        tools:layout="@layout/fragment_tasks" >
+        <action
+            android:id="@+id/action_tasksFragment_to_editTaskFragment"
+            app:destination="@id/editTaskFragment"
+            app:popUpTo="@id/tasksFragment"
+            app:popUpToInclusive="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="com.example.mytasks.view.SignUpFragment"
+        android:label="My Tasks"
+        tools:layout="@layout/fragment_sign_up" >
+        <action
+            android:id="@+id/action_signUpFragment_to_createAccountFeedbackFragment"
+            app:destination="@id/createAccountFeedbackFragment" />
+        <action
+            android:id="@+id/action_signUpFragment_to_loginFragment"
+            app:popUpTo="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editTaskFragment"
+        android:name="com.example.mytasks.view.EditTaskFragment"
+        android:label="My Tasks"
+        tools:layout="@layout/fragment_edit_task" >
+        <argument
+            android:name="task"
+            app:argType="com.example.mytasks.database.model.TaskModel"
+            app:nullable="true"
+            android:defaultValue="@null" />
+    </fragment>
+    <fragment
+        android:id="@+id/createAccountFeedbackFragment"
+        android:name="com.example.mytasks.view.CreateAccountFeedbackFragment"
+        android:label="My Tasks"
+        tools:layout="@layout/fragment_create_account_feedback" >
+        <action
+            android:id="@+id/action_createAccountFeedbackFragment_to_loginFragment"
+            app:popUpTo="@id/loginFragment"
+            app:popExitAnim="@anim/nav_default_exit_anim" />
+    </fragment>
+</navigation>

@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="10dp"
+    android:layout_margin="8dp"
     app:cardCornerRadius="10dp"
     android:elevation="30dp"
     xmlns:tools="http://schemas.android.com/tools"
@@ -17,8 +17,11 @@
 
         <com.google.android.material.checkbox.MaterialCheckBox
             android:id="@+id/checkBoxList"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:paddingStart="10dp"
             android:checked="false"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -32,6 +35,7 @@
             android:paddingStart="5dp"
             android:paddingEnd="10dp"
             android:textSize="18sp"
+            android:textColor="#000000"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/checkBoxList"
             app:layout_constraintStart_toEndOf="@id/checkBoxList"
@@ -49,8 +53,5 @@
             app:srcCompat="@drawable/right_arrow_icon" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-
 
 </androidx.cardview.widget.CardView>
